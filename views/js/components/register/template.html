@@ -1,0 +1,44 @@
+<div>
+	<form name='registerForm' ng-submit='register()'>
+			<div class='form-group'>
+				<input type='text' class='form-control' ng-model='name' placeholder='Enter Your Name'>
+			</div>
+			<div class='form-group'>
+				<input type='text' class='form-control' ng-model='phone' placeholder='Enter your phone'>
+			</div>
+			<div class='form-group'>
+				<input type='text' class='form-control' ng-model='email' placeholder='Enter your email'>
+			</div>
+			<div class='form-group'>
+				<label for="colleges">Select College</label>
+				<select class='form-control' id='colleges' ng-model='collegeSelect'>
+					<option ng-repeat="clg in colleges.body" value={{clg._id}}>
+						{{clg.name}}
+					</option>
+				</select>
+			</div>
+			<div class='form-group'>
+				<label for="gender">Select Gender></label>
+				<select class='form-control' id='gender' ng-model='genderSelect'>
+					<option value='M'>Male</option>
+					<option value='F'>Female</option>
+				</select>
+			</div>
+			<div class='form-group'>
+				<input type='text' class='form-control' ng-model='course' placeholder='Enter your Course'>
+			</div>
+			<div class='form-group'>
+				<label for='year'>Select Year</label>
+				<select id='year' class='form-control' ng-model='yearSelect'>
+					<option value='1'>1</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5</option>
+				</select>
+			</div>
+			<div class='form-group'>
+				<input type='submit' value='REGISTER' class='btn btn-danger'> 
+			</div>
+	</form>
+</div>
