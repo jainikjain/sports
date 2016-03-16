@@ -4,8 +4,7 @@ var express=require("express"),
 
 var counter=require("./models/schemas/counters");
 
-var colleges=require("./routes/colleges"),
-    games=require("./routes/games"),
+var games=require("./routes/games"),
     participants=require("./routes/participants"),
     users=require("./routes/users")
 
@@ -20,11 +19,15 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use(express.static('views'));
 
-app.use("/colleges",colleges);
 app.use("/games",games);
 app.use("/participants",participants);
 app.use("/users",users);
+
+app.get('/',function(req, res) {
+  res.sendFile( __dirname + '/views/index.html');
+});
 
 app.listen(3000,function(){
   console.log("Sports Api Up");

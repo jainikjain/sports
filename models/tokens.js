@@ -25,3 +25,5 @@ token.expireToken=function(tokenId,callback){
     callback(error,numAffected);
   })
 }
+
+module.exports = token;

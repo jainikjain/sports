@@ -1,0 +1,1 @@
+headerBar = angular.module('headerBar',[]);

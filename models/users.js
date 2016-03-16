@@ -1,6 +1,6 @@
 var userData=require("./schemas/users");
 var token=require("./tokens");
-var encrypt=require("../helpers/encrypt");
+var encrypt=require("../extras/encrypt");
 var user={};
 
 user.create=function(data,callback){
@@ -42,18 +42,23 @@ user.block=function(userId,callback){
 user.signIn=function(data,callback){
   userData.findOne({"email":data.email,"password":data.password},function(error,result){
     var sent={};
-    if(result==null)
+    if(result==null){
       sent.invalid=true;
-    else if(result.userBlocked)
+      callback(error,sent);
+    }
+    else if(result.userBlocked === 'true'){
         sent.blocked=true;
+        callback(error,sent);
+    }
     else {
-      tokenData={"tokenId":encrypt(result._id),associatedUser:result._id};
+      tokenData={"tokenValue":encrypt(result._id),associatedUser:result._id};
       token.create(tokenData,function(error,newToken){
-        sent.tokenId=newToken.tokenId;
+        console.log(newToken);
+        sent.tokenValue=newToken.tokenValue;
+        callback(error,sent);
       })
     }
-    callback(error,sent);
-
   })
 }
+
 module.exports=user;

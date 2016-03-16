@@ -12,21 +12,38 @@
 	<script type="text/javascript" src="./js/components/register/controller.js"></script>
 	<script type="text/javascript" src="./js/components/register/directive.js"></script>
 
+	<script type="text/javascript" src="./js/components/signUpForm/module.js"></script>
+	<script type="text/javascript" src="./js/components/signUpForm/controller.js"></script>
+	<script type="text/javascript" src="./js/components/signUpForm/directive.js"></script>
+
+	<script type="text/javascript" src="./js/components/signInForm/module.js"></script>
+	<script type="text/javascript" src="./js/components/signInForm/controller.js"></script>
+	<script type="text/javascript" src="./js/components/signInForm/directive.js"></script>
+
+	<script type="text/javascript" src="./js/components/headerBar/module.js"></script>
+	<script type="text/javascript" src="./js/components/headerBar/controller.js"></script>
+	<script type="text/javascript" src="./js/components/headerBar/directive.js"></script>
+
 	<script type="text/javascript" src="./js/services/module.js"></script>
 	<script type="text/javascript" src="./js/services/core/module.js"></script>
 	<script type="text/javascript" src="./js/services/core/participantService.js"></script>
 	<script type="text/javascript" src="./js/services/core/collegeService.js"></script>
+	<script type="text/javascript" src="./js/services/core/userService.js"></script>
 
 	<script type="text/javascript" src="./js/pages/module.js"></script>
 	<script type="text/javascript" src="./js/pages/register/controller.js"></script>
+	<script type="text/javascript" src="./js/pages/signUp/controller.js"></script>
+	<script type="text/javascript" src="./js/pages/signIn/controller.js"></script>
 
 	<script type="text/javascript" src="./js/app.js"></script>
 
 	<!-- css sheets -->
 	<link rel="stylesheet" type="text/css" href="./assets/css/vendor/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
 </head>
 <body ng-app='sports_app'>
+	<header-bar></header-bar>
 	<ng-view></ng-view>
 </body>
 </html>

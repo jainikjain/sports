@@ -2,20 +2,22 @@ var express=require("express"),
     router=express.Router();
 
 var users=require("../models/users");
+var respond = require('../extras/responder');
 
 router.route("/")
   .post(function(req,res){
     users.create(req.body,function(error,result){
       if(error)
         console.log(error);
-      console.log(result);
+      respond(res,false,'User Created',result);
     })
   })
   .get(function(req,res){
+    console.log('ansh');
     users.getAll(function(error,result){
       if(error)
         console.log(error)
-      console.log(result);
+      respond(res,false,'Details of all Users',result);
     })
   })
 
@@ -26,10 +28,10 @@ router.route("/signin")
         console.log(error);
       if(result.invalid)
         respond(res,true,"Invalid Login",{"InvalidLogin":true});
-      else if(result.blocked)
+      else if(result.blocked === true)
         respond(res,true,"User Blocked",{"UserBlocked":true});
       else {
-        respond(res,false,"User Logged In",{tokenId:result.tokenId});
+        respond(res,false,"User Logged In",{tokenValue:result.tokenValue});
       }
     })
   })

@@ -1,1 +1,6 @@
-angular.module("components",["register"]);
+angular.module("components",[
+	"register",
+	'signUpForm',
+	'headerBar',
+	'signInForm'
+	]);

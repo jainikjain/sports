@@ -21,4 +21,4 @@ participant.getById=function(userId,callback){
   })
 }
 
-module.exports=participant;
+module.exports = participant;

@@ -4,10 +4,7 @@ var participantSchema=new mongoose.Schema({
   name:{type:String,required:true},
   email:{type:String,required:true},
   phone:{type:String,required:true,max:10,min:10},
-  gender:{type:String,require:true,enum:["M","F"]},
-  college:{type:mongoose.Schema.ObjectId,ref:"colleges"},
-  course:{type:String,default:"other"},
-  year:{type:Number,enum:[1,2,3,4,5]}
+  gender:{type:String,require:true,enum:["M","F"]}
 })
 
 participantSchema.pre("save",function(next){

@@ -1,6 +1,6 @@
 var express=require("express"),
     router=express.Router();
-var respond=require("../helpers/responder");
+var respond=require("../extras/responder");
 
 var participants=require("../models/participants");
 
