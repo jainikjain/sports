@@ -1,0 +1,21 @@
+<div>
+	<h3>Create Tournament</h3>
+	<form ng-submit = 'createTournament()'>
+		<div class = 'form-group'>
+			<input type = 'text' class = 'form-control' placeholder="Enter Tournamenet Name" ng-model = 'name'>
+		</div>
+		<div class = 'form-group'>
+			<select class = 'form-control' ng-model = 'game'>
+				<option class = 'form-control' value = ''>Select Game</option>
+				<option ng-repeat = 'game in games' value = 'game._id' >{{game.name}}</option>
+			</select>
+		</div>
+		<div class = 'form-group'>
+			<input type = 'text' class = 'form-control' placeholder="Enter No Of Teams" ng-model = 'noOfTeams'>
+		</div>
+		<span class = 'text-info'>{{createTournamentMsg}}</span>
+		<div class = 'form-group'>
+			<button class = 'btn btn-primary pull-right'>Create Tournament</button>
+		</div>
+	</form>
+</div>

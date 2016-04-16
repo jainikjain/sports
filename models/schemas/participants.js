@@ -4,7 +4,8 @@ var participantSchema=new mongoose.Schema({
   name:{type:String,required:true},
   email:{type:String,required:true},
   phone:{type:String,required:true,max:10,min:10},
-  gender:{type:String,require:true,enum:["M","F"]}
+  gender:{type:String,require:true,enum:["M","F"]},
+  forGame:{type: mongoose.Schema.Types.ObjectId, ref: 'games'}
 })
 
 participantSchema.pre("save",function(next){

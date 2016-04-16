@@ -1,5 +1,7 @@
 var express=require("express"),
   router=express.Router();
+var respond=require("../extras/responder");
+
 
 var games=require("../models/games");
 
@@ -8,14 +10,14 @@ router.route("/")
     games.create(req.body,function(error,result){
       if(error)
         console.log(error);
-      console.log(result);
+      respond(res,false,'Game created',result);
     })
   })
   .get(function(req,res){
     games.getAll(function(error,result){
       if(error)
         console.log(error);
-      console.log(result);
+      respond(res,false,'All games',result);
     })
   });
 

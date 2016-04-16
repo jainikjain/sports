@@ -13,4 +13,15 @@ router.route("/")
     })
   })
 
+router.route('/forGame/:gameId')
+	.get(function(req,res) {
+		participants.getByGameId(req.params.gameId, function(error,result) {
+			if(error) {
+				console.log(error);
+			}
+			else {
+				respond(res,false,'Participants Data',result)
+			}
+		})
+	})
 module.exports=router;

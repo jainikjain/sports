@@ -3,7 +3,6 @@ var mongoose=require("mongoose");
 var gameSchema=new mongoose.Schema({
   gameId:{type:String},
   name:{type:String,required:true},
-  type:{type:String,required:true},
   for:{type:String,enum:["M","F","B"],default:"B"},
   isTeamGame:{type:Boolean,default:false},
   noOfPlayers:{type:Number,default:1},

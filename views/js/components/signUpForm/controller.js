@@ -21,5 +21,8 @@ signUpForm.controller('SignUpFormController',function($scope,userService) {
         $scope.signUpMsg = 'New User Created';
       })
     }
+    else {
+      $scope.signUpStatus = 'Please fill all the fields to sign up';
+    }
   }
 })

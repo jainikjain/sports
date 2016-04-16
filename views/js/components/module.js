@@ -2,5 +2,11 @@ angular.module("components",[
 	"register",
 	'signUpForm',
 	'headerBar',
-	'signInForm'
+	'signInForm',
+	'createGameForm',
+	'teamCreateForm',
+	'selectPlayers',
+	'teamList',
+	'teamPlayerList',
+	'createTournament'
 	]);

@@ -1,0 +1,11 @@
+<div>
+	<h3 class = 'text-info'>Select Players</h3>
+	<input type = 'text' class = 'form-control' placeholder="Enter name to search" ng-change = 'search()' ng-model ='searchQuery'>
+	<ul class = 'items-list'>
+		<li ng-repeat = 'player in players'>
+			{{player.name}}
+			<button class = 'btn btn-primary pull-right' ng-click = "selectPlayer(player._id)">Select</button>
+		</li>
+		<span class = 'text-info'>{{selectPlayerMsg}}</span>
+	</ul>
+</div>

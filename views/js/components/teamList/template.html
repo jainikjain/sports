@@ -1,0 +1,10 @@
+<div>
+	<ul class = 'items-list'>
+		<li ng-repeat = 'team in teams'>
+			<h4> {{team.name}} </h4>
+			<span class = 'text-muted'> {{team.game.name}} </span>
+			<button class = 'btn btn-primary pull-right' ng-click = 'select(team)'>View</button>
+			<br/><br/>
+		</li>
+	</ul>
+</div>

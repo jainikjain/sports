@@ -1,0 +1,25 @@
+<div>
+	<h3>Create Team</h3>
+	<form ng-submit = 'createTeam()'>
+		<div class = 'form-group'>
+			<input type = 'text' class = 'form-control' placeholder="Enter Team Name" ng-model = 'name'>
+		</div>
+		<div class = 'form-group'>
+			<select class = 'form-control' ng-model = 'game'>
+				<option value = ''>Select Game ...</option>
+				<option ng-repeat = 'game in games' value = "{{game._id}}" class = 'games'>{{ game.name }}</option>
+			</select>
+		</div>
+		<div class = 'form-group'>
+			<select class = 'form-control' ng-model = 'teamGender'>
+				<option value = ''>Select Gender...</option>
+				<option value = 'M'>Male</option>
+				<option value = 'F'>Female</option>
+			</select>
+		</div>
+		<span class = 'text-info'>{{ createTeamMsg }}</span>
+		<div class = 'form-group'>
+			<button class = 'btn btn-primary pull-right'>CREATE TEAM</button>
+		</div>
+	</form>
+</div>

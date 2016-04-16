@@ -1,4 +1,5 @@
 <div>
+	<h3>Register Participant</h3>	
 	<form name='registerForm' ng-submit='register()'>
 			<div class='form-group'>
 				<input type='text' class='form-control' ng-model='name' placeholder='Enter Your Name'>
@@ -10,10 +11,16 @@
 				<input type='text' class='form-control' ng-model='email' placeholder='Enter your email'>
 			</div>
 			<div class='form-group'>
-				<label for="gender">Select Gender></label>
+				<label for="gender">Select Gender</label>
 				<select class='form-control' id='gender' ng-model='genderSelect'>
 					<option value='M'>Male</option>
 					<option value='F'>Female</option>
+				</select>
+			</div>
+			<div class = 'form-group'>
+				<select class = 'form-control' ng-model = 'game'>
+					<option value = ''>For Game ...</option>
+					<option ng-repeat = 'game in games' value = "{{game._id}}" class = 'games'>{{ game.name }}</option>
 				</select>
 			</div>
 			<span class = 'text-info'>{{ registerMsg }}</span>

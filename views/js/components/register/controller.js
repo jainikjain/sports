@@ -1,6 +1,10 @@
-registerComponent.controller("RegisterController",function($scope,participantService){
+registerComponent.controller("RegisterController",function($scope, participantService, gameService){
 
   $scope.registerMsg = '';
+
+  gameService.get(function(response) {
+    $scope.games = response.body;
+  })
 
   $scope.register=function(){
 
@@ -10,6 +14,7 @@ registerComponent.controller("RegisterController",function($scope,participantSer
       participant.phone = $scope.phone;
       participant.gender = $scope.genderSelect;
       participant.email = $scope.email;
+      participant.forGame = $scope.game
 
       $scope.registerMsg = 'Sending Data...';
 

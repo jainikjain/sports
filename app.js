@@ -6,7 +6,10 @@ var counter=require("./models/schemas/counters");
 
 var games=require("./routes/games"),
     participants=require("./routes/participants"),
-    users=require("./routes/users")
+    users=require("./routes/users"),
+    teams = require('./routes/teams'),
+    tournaments = require('./routes/tournaments'),
+    matches = require('./routes/matches')
 
 
 var app=express();
@@ -24,7 +27,9 @@ app.use(express.static('views'));
 app.use("/games",games);
 app.use("/participants",participants);
 app.use("/users",users);
-
+app.use('/teams',teams);
+app.use('/tournaments',tournaments);
+app.use('/matches', matches);
 app.get('/',function(req, res) {
   res.sendFile( __dirname + '/views/index.html');
 });

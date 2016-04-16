@@ -1,0 +1,1 @@
+var createTournament = angular.module('createTournament', []);

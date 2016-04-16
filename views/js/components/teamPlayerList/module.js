@@ -1,0 +1,1 @@
+var teamPlayerList = angular.module('teamPlayerList',[]);

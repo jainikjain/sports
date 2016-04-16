@@ -1,0 +1,1 @@
+var teamView = angular.module('teamView',[]);

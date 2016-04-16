@@ -1,0 +1,1 @@
+var createGameForm = angular.module('createGameForm', [])
