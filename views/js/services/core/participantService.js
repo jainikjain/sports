@@ -1,5 +1,5 @@
 core.factory("participantService",function($resource){
-	return $resource("http://localhost:3000/participants/:id",{id:"@id"},{
+	return $resource("/participants/:id",{id:"@id"},{
 		register:{
 			method:"POST",
 			url:"/participants",

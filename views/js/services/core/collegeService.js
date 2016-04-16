@@ -1,3 +1,3 @@
 core.factory("collegeService",function($resource){
-	return $resource("http://localhost:3000/colleges/:id",{id:"@id"});
+	return $resource("/colleges/:id",{id:"@id"});
 })
