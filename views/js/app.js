@@ -10,7 +10,14 @@ angular.module("sports_app",[
     $routeProvider
       .when("/",{
         templateUrl:"./js/pages/home/index.html",
-        controller:"HomePageController"
+        controller:"HomePageController",
+        resolve: {
+          checkIfSignedIn: function($location) {
+            if(!localStorage.sports_associated_user) {
+              $location.path('/sign_in');
+            }
+          }
+        }
       })
       .when('/sign_up',{
         templateUrl:'./js/pages/signUp/index.html',

@@ -1,15 +1,16 @@
 headerBar.controller('HeaderBarController',function($scope, $location) {
+  debugger;
 	if(localStorage.sports_associated_user) {
-    $scope.signOut = true;
+    $scope.signOutLabel = true;
   }
   else {
-    $scope.signOut = false;
+    $scope.signOutLabel = false;
   }
 
   $scope.signOut = function() {
     debugger;
     localStorage.removeItem('sports_associated_user');
-    $location.url('#/sign_in')
-    $scope.signOut = false;
+    $location.url('/sign_in')
+    $scope.signOutLabel = false;
   }
 })
