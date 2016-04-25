@@ -12,14 +12,13 @@ signInForm.controller('SignInFormController',function($scope,$location,userServi
       var user = new userService();
       user.email = email;
       user.password = password;
-      user.$signIn(function() {
-
+      user.$signIn(function(response) {
         if(user.body.InvalidLogin) {
           $scope.signInMsg = 'Invalid User name and password';
         }
         else {
-
           $scope.signInMsg = '';
+          localStorage.setItem('sports_associated_user',response.body.associatedUser)
           $location.url('/');
         }
       }) 

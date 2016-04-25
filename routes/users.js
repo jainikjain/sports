@@ -31,7 +31,7 @@ router.route("/signin")
       else if(result.blocked === true)
         respond(res,true,"User Blocked",{"UserBlocked":true});
       else {
-        respond(res,false,"User Logged In",{tokenValue:result.tokenValue});
+        respond(res,false,"User Logged In",result);
       }
     })
   })

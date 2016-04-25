@@ -7,7 +7,7 @@
 		<div class = 'form-group'>
 			<select class = 'form-control' ng-model = 'game'>
 				<option class = 'form-control' value = ''>Select Game</option>
-				<option ng-repeat = 'game in games' value = 'game._id' >{{game.name}}</option>
+				<option ng-repeat = 'game in games' value = {{game._id}} >{{game.name}}</option>
 			</select>
 		</div>
 		<div class = 'form-group'>

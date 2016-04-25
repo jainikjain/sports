@@ -1,11 +1,11 @@
 var mongoose=require("mongoose");
-var rolesEnum=["ADDEVENT","REGISTER","ADDCOLLEGE","USERBLOCK"];
+var rolesEnum=['ORGANIZER', 'PLAYER'];
 var userSchema=new mongoose.Schema({
   userId:{type:String},
   name:{type:String,required:true},
   email:{type:String,required:true},
   phone:{type:String,required:true,min:10,max:10},
-  roles:[{type:String,enum:rolesEnum}],
+  role:{type:String,enum:rolesEnum, default: 'ORGANIZER'},
   password:{type:String,required:true},
   userBlocked:{type:String,default:false}
 })

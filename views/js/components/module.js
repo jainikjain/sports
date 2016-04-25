@@ -8,5 +8,10 @@ angular.module("components",[
 	'selectPlayers',
 	'teamList',
 	'teamPlayerList',
-	'createTournament'
+	'createTournament',
+	'createMatchForm',
+	'tournamentsList',
+	'matchView',
+	'fixtures',
+	'viewTeams'
 	]);

@@ -1,0 +1,1 @@
+var viewTeams = angular.module('viewTeams', []);

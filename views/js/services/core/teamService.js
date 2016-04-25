@@ -10,6 +10,13 @@ core.factory('teamService', function($resource) {
 			params: {
 				player_id: '@player_id'
 			}
+		},
+		getOfTournament: {
+			method: 'GET',
+			url: '/teams/of_tournament/:tournament_id',
+			params: {
+				tournament_id: '@tournament_id'
+			}
 		}
 	})
 })

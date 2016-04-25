@@ -1,5 +1,6 @@
 createGameForm.controller('CreateGameFormController', function($scope,gameService) {
 	$scope.createGame = function() {
+		debugger;
 		var game = new gameService();
 		game.name = $scope.name;
 		game.for = $scope.for;

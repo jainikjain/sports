@@ -25,6 +25,18 @@ router.route("/")
 		})
 	})
 
+router.route('/of_tournament/:id')
+	.get(function(req,res) {
+		teams.getByTournament(req.params.id, function(error,result) {
+			if(error) {
+				console.log(error)
+			}
+			else {
+				respond(res, false, 'Teams Of Tournament', result)
+			}
+		})
+	})
+
 router.route('/:id/add_player/:player_id')
 	.put(function(req,res) {
 		teams.addPlayer(req.params.id, req.params.player_id, function(error,result) {

@@ -14,7 +14,7 @@ match.getAll = function(data, callback) {
 }
 
 match.getByTournament = function(tournamentId, callback) {
-	matchData.find({tournament: tournamentId}).populate('team1 team2').exec(function(error,result) {
+	matchData.find({tournament: tournamentId}).populate('team1 team2 tournament').exec(function(error,result) {
 		callback(error,result)
 	})
 }

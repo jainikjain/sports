@@ -8,14 +8,14 @@ team.create = function(data,callback) {
 }
 
 team.getAll = function(callback) {
-	teamData.find({}).populate('players game').exec(function(error,result) {
+	teamData.find({}).populate('players tournament').exec(function(error,result) {
 		callback(error,result);
 	})
 }
 
 team.getById = function(id, callback) {
 	console.log(id)
-	teamData.findOne({"_id": id}).populate('players game').exec(function(error,result) {
+	teamData.findOne({"_id": id}).populate('players tournament').exec(function(error,result) {
 		callback(error,result);
 	})
 }
@@ -23,6 +23,12 @@ team.getById = function(id, callback) {
 team.addPlayer = function(teamId, playerId, callback) {
 	teamData.update({'_id': teamId}, {$addToSet: {players: playerId } }, function(error, num) {
 		callback(error, num);
+	})
+}
+
+team.getByTournament = function(tournamentId, callback) {
+	teamData.find({tournament: tournamentId}).populate('players tournament').exec(function(error,result) {
+		callback(error,result);
 	})
 } 
 

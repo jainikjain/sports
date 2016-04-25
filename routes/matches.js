@@ -24,7 +24,8 @@ router.route('/')
 
 router.route('/in/:tournament_id')
 	.get(function(req,res) {
-		matches.getByTournament(req.param.tournament_id, function(error,result) {
+		matches.getByTournament(req.params.tournament_id, function(error,result) {
+			console.log(result)
 			if(error)
 				console.log(error)
 			else

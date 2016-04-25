@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
 var teamSchema = new mongoose.Schema({
+  tournament: {type: mongoose.Schema.Types.ObjectId, ref: 'tournaments'},
 	name: {type: String, required: true},
-	game: {type: mongoose.Schema.Types.ObjectId, ref: 'games'},
 	teamGender: {type: String,required: true},
 	players: [{type: mongoose.Schema.Types.ObjectId, ref: 'participants'}]
 })

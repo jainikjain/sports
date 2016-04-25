@@ -1,0 +1,12 @@
+<div>
+  <ul>
+    <li ng-repeat = 'tournament in tournaments' style = 'list-style-type: none;'>
+      <div class = 'well'>
+        Name: <b>{{tournament.name}}</b>
+        <a class = 'btn btn-primary pull-right' ng-href = '#/tournaments/{{tournament._id}}'>
+          VIEW
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -55,7 +55,8 @@ user.signIn=function(data,callback){
       token.create(tokenData,function(error,newToken){
         console.log(newToken);
         sent.tokenValue=newToken.tokenValue;
-        callback(error,sent);
+        // sent.userId = associatedUser
+        callback(error,newToken);
       })
     }
   })

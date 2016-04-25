@@ -18,9 +18,9 @@
 				</select>
 			</div>
 			<div class = 'form-group'>
-				<select class = 'form-control' ng-model = 'game'>
-					<option value = ''>For Game ...</option>
-					<option ng-repeat = 'game in games' value = "{{game._id}}" class = 'games'>{{ game.name }}</option>
+				<select class = 'form-control' ng-model = 'tournament'>
+					<option value = ''>Select Tournament...</option>
+					<option ng-repeat = 'tournament in tournaments' value = "{{tournament._id}}" class = 'games'>{{ tournament.name }}</option>
 				</select>
 			</div>
 			<span class = 'text-info'>{{ registerMsg }}</span>

@@ -2,10 +2,8 @@ var mongoose=require("mongoose");
 var participantSchema=new mongoose.Schema({
   partId:{type:String},
   name:{type:String,required:true},
-  email:{type:String,required:true},
-  phone:{type:String,required:true,max:10,min:10},
-  gender:{type:String,require:true,enum:["M","F"]},
-  forGame:{type: mongoose.Schema.Types.ObjectId, ref: 'games'}
+  gender:{type:String,require:true,enum:["M","F"], default: 'M'},
+  tournament:{type: mongoose.Schema.Types.ObjectId, ref: 'tournaments'}
 })
 
 participantSchema.pre("save",function(next){

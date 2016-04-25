@@ -1,0 +1,17 @@
+<div>
+  <p class = 'text-primary'>
+    {{tournamentName}}
+  </p>
+  <button class = 'btn btn-primary' ng-click = 'setFixtures()'>
+    SET FIXTURES
+  </button>
+  {{fixtureMessage}}
+  <div class = 'row'>
+    <div class = 'col-md-4 text-center margin-top-30' ng-repeat = 'match in matches'>
+        <span class = 'text-primary' style = 'font-weight: 900;'>{{match.day}}</span><br>
+        <button class = 'btn btn-primary'>{{match.team1.name}}</button>
+        <i>vs</i>
+        <button class = 'btn btn-primary'>{{match.team2.name}}</button>
+    </div>
+  </div>
+</div>

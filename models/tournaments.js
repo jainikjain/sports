@@ -16,8 +16,14 @@ tournament.getAll = function(callback) {
 }
 
 tournament.getById = function(tournamentId, callback) {
-	tournamentData.findOne({'_id': tournamentId},function(error, result) {
+	tournamentData.findOne({'_id': tournamentId}).populate('game creator').exec(function(error, result) {
 		callback(error, result);
+	})
+}
+
+tournament.getByCreator = function(userId, callback) {
+	tournamentData.find({creator: userId}).populate('game').exec(function(error,result) {
+		callback(error,result);
 	})
 }
 

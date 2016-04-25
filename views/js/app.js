@@ -3,13 +3,14 @@ angular.module("sports_app",[
   "services",
   "pages",
   "ngRoute",
-  "ngResource"
+  "ngResource",
+  "ui.bootstrap"
   ])
   .config(function($routeProvider){
     $routeProvider
       .when("/",{
-        templateUrl:"./js/pages/register/index.html",
-        controller:"RegisterPageController"
+        templateUrl:"./js/pages/home/index.html",
+        controller:"HomePageController"
       })
       .when('/sign_up',{
         templateUrl:'./js/pages/signUp/index.html',
@@ -38,5 +39,13 @@ angular.module("sports_app",[
       .when('/create_tournament', {
         templateUrl: './js/pages/createTournamentPage/index.html',
         controller: 'CreateTournamentPageController'
+      })
+      .when('/create_match', {
+        templateUrl: './js/pages/createMatchPage/index.html',
+        controller: 'CreateMatchPageController'
+      })
+      .when('/tournaments/:id', {
+        templateUrl: './js/pages/tournaments/index.html',
+        controller: 'TournamentsPagesController'
       })
   })
