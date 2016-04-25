@@ -23,5 +23,8 @@ signInForm.controller('SignInFormController',function($scope,$location,userServi
         }
       }) 
     }
+    else {
+      $scope.signInMsg = 'Enter a valid email and password to log In'
+    }
   }
 })

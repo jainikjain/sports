@@ -1,4 +1,5 @@
 <div>
+  <h3>Sign In...</h3>
   <form ng-submit = 'signIn()'>
     <div class = 'form-group'>
       <input type = 'text' class = 'form-control' placeholder="Enter Your Email" ng-model = 'email'>
@@ -6,6 +7,7 @@
     <div class ='form-group'>
       <input type = 'password' class = 'form-control' placeholder="Enter Your Password" ng-model = 'password'>
     </div>
+    <span class = 'text-info'>{{signInMsg}}</span>
     <div class = 'form-group'>
       <button class = 'btn btn-info'>Sign Me In...</button>
       <a class ='btn btn-info pull-right' ng-href = '#sign_up'>I am Not a User...</a>

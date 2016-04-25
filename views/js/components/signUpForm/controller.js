@@ -37,7 +37,7 @@ signUpForm.controller('SignUpFormController',function($scope,userService) {
 
     }
     else {
-      $scope.signUpStatus = 'Please fill all the fields to sign up';
+      $scope.signUpMsg = 'Please fill all the fields to sign up';
     }
   }
 })
