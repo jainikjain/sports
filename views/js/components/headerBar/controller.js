@@ -10,7 +10,7 @@ headerBar.controller('HeaderBarController',function($scope, $location) {
   $scope.signOut = function() {
     debugger;
     localStorage.removeItem('sports_associated_user');
-    $location.url('/sign_in')
+    $location.url('sign_in')
     $scope.signOutLabel = false;
   }
 })
