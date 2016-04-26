@@ -1,0 +1,8 @@
+<div>
+  <table class = 'table'>
+    <tr ng-repeat = "team in teams | orderBy: '-points'">
+      <td>{{team.name}}</td>
+      <td>{{team.points}}</td>
+    </tr>
+  </table>
+</div>

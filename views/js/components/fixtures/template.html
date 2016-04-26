@@ -9,9 +9,16 @@
   <div class = 'row'>
     <div class = 'col-md-4 text-center margin-top-30' ng-repeat = 'match in matches'>
         <span class = 'text-primary' style = 'font-weight: 900;'>{{match.day}}</span><br>
-        <button class = 'btn btn-primary'>{{match.team1.name}}</button>
+        <button ng-class = "match.wonBy === 'team1' ? 'btn btn-success' : 'btn btn-primary'" ng-click = "team1Win(match._id)">{{match.team1.name}}</button>
         <i>vs</i>
-        <button class = 'btn btn-primary'>{{match.team2.name}}</button>
+        <button ng-class = "match.wonBy === 'team2' ? 'btn btn-success' : 'btn btn-primary'" ng-click = 'team2Win(match._id)'>{{match.team2.name}}</button>
+    </div>
+  </div>
+  <div class= 'row margin-top-30'>
+    <div class = 'col-md-2'></div>
+    <div class = 'col-md-8'>
+      <h4>Rank Table</h4>
+      <team-table teams = 'teamsToBeSent'></team-table>
     </div>
   </div>
 </div>

@@ -33,4 +33,24 @@ router.route('/in/:tournament_id')
 		})
 	})
 
+router.route('/:id/won_by/team1')
+	.put(function(req,res) {
+		matches.assignWinner(req.params.id, 'team1', function(error, result) {
+			if(error)
+				console.log(error)
+			else
+				respond(res,false,'Team1 won the match', result)
+		})
+	})
+
+router.route('/:id/won_by/team2')
+	.put(function(req,res) {
+		matches.assignWinner(req.params.id, 'team2', function(error, result) {
+			if(error)
+				console.log(error)
+			else
+				respond(res,false,'Team2 won the match', result)
+		})
+	})
+
 module.exports = router;

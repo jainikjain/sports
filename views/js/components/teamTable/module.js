@@ -1,0 +1,1 @@
+var teamTable = angular.module('teamTable',[]);

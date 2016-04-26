@@ -13,5 +13,6 @@ angular.module("components",[
 	'tournamentsList',
 	'matchView',
 	'fixtures',
-	'viewTeams'
+	'viewTeams',
+	'teamTable'
 	]);
