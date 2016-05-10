@@ -12,6 +12,30 @@
         <button ng-class = "match.wonBy === 'team1' ? 'btn btn-success' : 'btn btn-primary'" ng-click = "team1Win(match._id)">{{match.team1.name}}</button>
         <i>vs</i>
         <button ng-class = "match.wonBy === 'team2' ? 'btn btn-success' : 'btn btn-primary'" ng-click = 'team2Win(match._id)'>{{match.team2.name}}</button>
+        <br /> <br />
+        <div class = 'form-group'>
+          <label for = 'select-refree'>Select Refree:</label>
+          <select class = 'form-control' id = 'select-refree'>
+            <option>Anil Kumble</option>
+            <option>Stieve Bucknor</option>
+            <option>Jhonty Rhodes</option>
+            <option>Lala Amarnath</option>
+          </select>
+          <br />
+          <button class = 'btn btn-primary'>Select Refree <i class = 'fa fa-male'></i></button>
+        </div>
+        <br />
+        <div class = 'form-group'>
+          <label for = 'select-venue'>Select Venue:</label>
+          <select class = 'form-control' id = 'select-venue'>
+            <option>Kolkata</option>
+            <option>Mumbai</option>
+            <option>Delhi</option>
+            <option>Mohali</option>
+          </select>
+          <br />
+          <button class = 'btn btn-primary'>Select Venue <i class = 'fa fa-map-marker'></i></button>
+        </div>
     </div>
   </div>
   <div class= 'row margin-top-30'>

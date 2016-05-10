@@ -14,7 +14,7 @@ fixtures.controller('FixturesController', function($scope, tournamentService, te
         if (match == 0) {
             away = teams - 1;
         }
-        $scope.createMatch($scope.teams[home],$scope.teams[away], 'Day' + (round + 1), function(response) {
+        $scope.createMatch($scope.teams[home],$scope.teams[away], 'Round' + (round + 1), function(response) {
           debugger;
           $scope.matches.push({
             team1: _.where($scope.teams,{_id: response.body.team1})[0],
